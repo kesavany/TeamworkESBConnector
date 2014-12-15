@@ -1,0 +1,15 @@
+{
+  "apiUrl":"%s",
+  "clientId":"%s",
+  "companyId":"%s",
+  "name": "%s",
+  "addressOne": "%s",
+  "addressTwo": "%s",
+  "zip": "%s",
+  "city": "%s",
+  "state": "%s",
+  "countryCode": "%s",
+  "phone": "%s",
+  "fax": "%s",
+  "website": "%s"
+}

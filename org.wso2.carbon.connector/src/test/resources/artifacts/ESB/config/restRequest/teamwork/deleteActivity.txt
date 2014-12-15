@@ -1,0 +1,5 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"activityId":"%s"
+}

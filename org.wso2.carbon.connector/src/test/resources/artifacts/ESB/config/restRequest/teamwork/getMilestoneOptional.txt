@@ -1,0 +1,8 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"milestoneId":"%s",
+"getProgress":"%s",
+"showTaskLists":"%s",
+"showTasks":"%s"
+}

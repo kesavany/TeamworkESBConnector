@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://ws.apache.org/ns/synapse" name="addNewVersionToFile">
+    <parameter name="fileId" description="The id of the project"/>
+    <parameter name="pendingFileRef" description="The reference no of the file"/>
+    <parameter name="description" description="The description no of the file"/>
+    <sequence>
+        <property name="uri.var.fileId" expression="$func:fileId"/>
+        <property name="uri.var.pendingFileRef" expression="$func:pendingFileRef"/>
+        <property name="uri.var.description" expression="$func:description"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                "fileversion": {
+                    "pendingFileRef": "$1",
+                    "description": "$2"
+                }
+                }
+            </format>
+            <args>
+                <arg evaluator="xml" expression="$func:pendingFileRef"/>
+                <arg evaluator="xml" expression="$func:description"/>
+            </args>
+        </payloadFactory>
+        <property name="POST_TO_URI" value="true" scope="axis2" type="STRING"></property>
+        <property name="FORCE_HTTP_1.0" value="true" scope="axis2"></property>
+        <property name="DISABLE_CHUNKING" value="true" scope="axis2"></property>
+        <call>
+            <endpoint>
+                <http method="POST"
+                      uri-template="{uri.var.teamwork.apiUrl}/files/{uri.var.fileId}.json"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>
+
+
+
+
+

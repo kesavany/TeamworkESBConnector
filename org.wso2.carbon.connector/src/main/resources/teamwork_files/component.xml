@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_files" type="synapse/template">
+    <subComponents>
+        <component name="getFile">
+            <file>getFile.xml</file>
+            <description>Returns a file.</description>
+        </component>
+        <component name="getFilesOnAProject">
+            <file>getFilesOnAProject.xml</file>
+            <description>Returns the files on a project.</description>
+        </component>
+        <component name="addFileToProject">
+            <file>addFileToProject.xml</file>
+            <description>Add file to a project</description>
+        </component>
+        <component name="addNewVersionToFile">
+            <file>addNewVersionToFile.xml</file>
+            <description>Add new version to a file</description>
+        </component>
+        <component name="deleteFileFromProject">
+            <file>deleteFileFromProject.xml</file>
+            <description>Delete a file from a project.</description>
+        </component>
+    </subComponents>
+</component>

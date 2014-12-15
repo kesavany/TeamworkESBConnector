@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://ws.apache.org/ns/synapse" name="getProject">
+    <parameter name="projectId" description="The id of the Project"/>
+    <parameter name="includePeople" description="Show the people associated with the requested project/not"/>
+    <sequence>
+        <property name="uri.var.projectId" expression="$func:projectId"/>
+        <property name="uri.var.includePeople" expression="$func:includePeople"/>
+        <property name="uri.var.optionalParameters" value=""/>
+        <filter
+                xpath="get-property('uri.var.includePeople') = '' or  not(string(get-property('uri.var.includePeople')))">
+            <then>
+                <property name="uri.var.includePeople" value=""/>
+            </then>
+            <else>
+                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
+                '&amp;includePeople=', get-property('uri.var.includePeople'))"/>
+            </else>
+        </filter>
+
+        <call>
+            <endpoint>
+                <http method="GET"
+                      uri-template="{uri.var.teamwork.apiUrl}/projects/{uri.var.projectId}.json?{uri.var.optionalParameters}"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove" />
+        <header name="ETag" scope="transport" action="remove" />
+        <header name="P3P" scope="transport" action="remove" />
+        <header name="X-RateLimit-Remaining" scope="transport" action="remove" />
+        <header name="X-lastUpdated" scope="transport" action="remove" />
+        <header name="twserver" scope="transport" action="remove" />
+        <header name="X-RateLimit-Limit" scope="transport" action="remove" />
+    </sequence>
+</template>

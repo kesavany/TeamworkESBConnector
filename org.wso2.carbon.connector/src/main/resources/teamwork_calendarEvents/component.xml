@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_calendarEvents" type="synapse/template">
+    <subComponents>
+        <component name="createEvent">
+            <file>createEvent.xml</file>
+            <description>Create a calendar event.</description>
+        </component>
+        <component name="updateEvent">
+            <file>updateEvent.xml</file>
+            <description>Edit a calendar event.</description>
+        </component>
+        <component name="deleteEvent">
+            <file>deleteEvent.xml</file>
+            <description>Delete a calendar event.</description>
+        </component>
+        <component name="getEvent">
+            <file>getEvent.xml</file>
+            <description>Returns the details about a specific event.</description>
+        </component>
+        <component name="getAllEvents">
+            <file>getAllEvents.xml</file>
+            <description>Returns all calendar events that the current user can see in the provided date range.</description>
+        </component>
+        <component name="getAllEventTypes">
+            <file>getAllEventTypes.xml</file>
+            <description>Returns details about event types.</description>
+        </component>
+    </subComponents>
+</component>

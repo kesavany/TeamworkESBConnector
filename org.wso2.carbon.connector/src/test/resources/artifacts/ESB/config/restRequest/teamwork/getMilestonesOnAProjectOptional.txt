@@ -1,0 +1,7 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"projectId":"%s",
+"find":"%s",
+"getProgress":"%s"
+}

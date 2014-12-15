@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://ws.apache.org/ns/synapse" name="createCompanies">
+
+    <parameter name="name" description="The id of the video"/>
+    <parameter name="address_one" description="The name of the video"/>
+    <parameter name="address_two" description="The description of the video"/>
+    <parameter name="zip" description="The new privacy setting for the video"/>
+    <parameter name="city"description="."/>
+    <parameter name="state" description="Enable or disable the review page"/>
+    <parameter name="countrycode" description="The description of the video"/>
+    <parameter name="phone" description="The new privacy setting for the video"/>
+    <parameter name="fax"description="."/>
+    <parameter name="website" description="Enable or disable the review page"/>
+
+    <sequence>
+        <property name="HTTP_METHOD" value="GET" scope="axis2" type="STRING"/>
+        <property name="Accept-Encoding" scope="transport" action="remove"/>
+        <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+
+        <property name="uri.var.name" expression="$func:name"/>
+        <property name="uri.var.address_one" expression="$func:address_one"/>
+        <property name="uri.var.address_two" expression="$func:address_two"/>
+	<property name="uri.var.zip" expression="$func:zip"/>
+        <property name="uri.var.city" expression="$func:city"/>
+        <property name="uri.var.state" expression="$func:state"/>
+        <property name="uri.var.countrycode" expression="$func:countrycode"/>
+	<property name="uri.var.phone" expression="$func:phone"/>
+        <property name="uri.var.fax" expression="$func:fax"/>
+        <property name="uri.var.website" expression="$func:website"/>
+
+	<payloadFactory media-type="json">
+            <format>{
+                "name": "$1",
+    		"address_one": "$2",
+    		"address_two": "$3",
+    		"zip": "$4",
+    		"city": "$5",
+    		"state": "$6",
+    		"countrycode": "$7",
+    		"phone": "$8",
+    		"fax": "$9",
+    		"website": "$10"
+                }
+            </format>
+            <args>
+                <arg evaluator="xml" expression="$func:name"/>
+                <arg evaluator="xml" expression="$func:address_one"/>
+                <arg evaluator="xml" expression="$func:address_two"/>
+                <arg evaluator="xml" expression="$func:state"/>
+                <arg evaluator="xml" expression="$func:countrycode"/>
+		<arg evaluator="xml" expression="$func:name"/>
+                <arg evaluator="xml" expression="$func:address_one"/>
+                <arg evaluator="xml" expression="$func:address_two"/>
+                <arg evaluator="xml" expression="$func:state"/>
+                <arg evaluator="xml" expression="$func:countrycode"/>
+            </args>
+
+        </payloadFactory>
+        <call>
+            <endpoint>
+                <http method="POST"
+                      uri-template="{uri.var.teamwork.apiUrl}/companies.json"/>
+            </endpoint>
+        </call>
+    </sequence>
+</template>
+
+
+
+
+

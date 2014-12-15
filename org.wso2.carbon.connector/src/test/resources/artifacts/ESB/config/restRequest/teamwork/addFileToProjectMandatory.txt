@@ -1,0 +1,11 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"projectId":"%s",
+"name":"%s",
+"description":"%s",
+"private":"%s",
+"categoryId":"%s",
+"categoryName":"%s",
+"pendingFileRef":"%s"
+}

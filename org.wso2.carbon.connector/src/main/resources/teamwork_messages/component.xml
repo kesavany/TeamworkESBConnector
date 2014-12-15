@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_messages" type="synapse/template">
+    <subComponents>
+        <component name="createMessage">
+            <file>createMessage.xml</file>
+            <description>Create a message.</description>
+        </component>
+        <component name="updateMessage">
+            <file>updateMessage.xml</file>
+            <description>Modifies the message data.</description>
+        </component>
+        <component name="deleteMessage">
+            <file>deleteMessage.xml</file>
+            <description>Delete a message.</description>
+        </component>
+        <component name="getMessage">
+            <file>getMessage.xml</file>
+            <description>Returns a message.</description>
+        </component>
+        <component name="getLatestMessages">
+            <file>getLatestMessages.xml</file>
+            <description>Returns the 25 most recent messages.</description>
+        </component>
+    </subComponents>
+</component>

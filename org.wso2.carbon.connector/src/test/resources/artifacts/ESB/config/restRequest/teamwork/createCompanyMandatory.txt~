@@ -1,0 +1,14 @@
+{
+  "apiUrl":"%s",
+  "client_id":"%s",
+  "name": "%s",
+  "address_one": "%s",
+  "address_two": "%s",
+  "zip": "%s",
+  "city": "%s",
+  "state": "%s",
+  "countrycode": "%s",
+  "phone": "%s",
+  "fax": "%s",
+  "website": "%s"
+}

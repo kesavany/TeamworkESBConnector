@@ -1,0 +1,6 @@
+{
+"apiUrl":"%s",
+"client_id":"%s",
+"project_id":"%s",
+"includePeople":"true"
+}

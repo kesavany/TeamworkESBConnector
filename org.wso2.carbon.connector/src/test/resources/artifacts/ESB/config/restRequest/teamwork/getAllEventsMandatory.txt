@@ -1,0 +1,6 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"startDate":"%s",
+"endDate":"%s"
+}

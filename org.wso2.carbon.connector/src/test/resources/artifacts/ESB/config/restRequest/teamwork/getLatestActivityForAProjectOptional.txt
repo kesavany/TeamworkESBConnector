@@ -1,0 +1,6 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"projectId":"%s",
+"maxItems":"%s"
+}

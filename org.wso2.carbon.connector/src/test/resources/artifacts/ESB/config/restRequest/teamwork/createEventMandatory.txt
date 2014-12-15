@@ -1,0 +1,22 @@
+{
+    "apiUrl":"%s",
+    "clientId":"%s",
+    "start": "%s",
+    "end": "%s",
+    "allDay": "%s",
+    "title": "%s",
+    "description": "%s",
+    "where": "%s",
+    "type": "%s",
+    "projectId": "%s",
+    "showAsBusy": "%s",
+    "id": "%s",
+    "attendingUserIds": "%s",
+    "notifyUserIds": "%s",
+    "attendeesCanEdit": "%s",
+    "projectUsersCanEdit": "%s",
+    "reminderType": "%s",
+    "period": "%s",
+    "before": "%s"
+  }
+

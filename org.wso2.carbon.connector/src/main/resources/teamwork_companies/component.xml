@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_companies" type="synapse/template">
+    <subComponents>
+        <component name="createCompany">
+            <file>createCompany.xml</file>
+            <description>Create a Company.</description>
+        </component>
+        <component name="updateCompany">
+            <file>updateCompany.xml</file>
+            <description>Modifies the company data.</description>
+        </component>
+        <component name="deleteCompany">
+            <file>deleteCompany.xml</file>
+            <description>Delete a company.</description>
+        </component>
+        <component name="getCompany">
+            <file>getCompany.xml</file>
+            <description>Returns a Company.</description>
+        </component>
+        <component name="getAllCompanies">
+            <file>getAllCompanies.xml</file>
+            <description>Returns all the Companies.</description>
+        </component>
+        <component name="getCompaniesWithinAProject">
+            <file>getCompaniesWithinAProject.xml</file>
+            <description>Returns the companies within a project.</description>
+        </component>
+    </subComponents>
+</component>

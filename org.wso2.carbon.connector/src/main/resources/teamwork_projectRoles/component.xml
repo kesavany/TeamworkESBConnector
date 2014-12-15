@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_projectRoles" type="synapse/template">
+    <subComponents>
+        <component name="listRolesOnProject">
+            <file>listRolesOnProject.xml</file>
+            <description>Returns the list of Roles set on a project.</description>
+        </component>
+    </subComponents>
+</component>

@@ -1,0 +1,11 @@
+ {
+      "apiUrl":"%s",
+      "clientId":"%s",
+      "projectId": "%s",
+      "title": "%s",
+      "description": "%s",
+      "deadline": "%s",
+      "notify": "%s",
+      "reminder": "%s",
+      "responsiblePartyIds": "%s"
+  }

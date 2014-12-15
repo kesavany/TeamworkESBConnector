@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="tw_getAllMilestones"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="clientId" expression="json-eval($.clientId)"/>
+         <property name="find" expression="json-eval($.find)"/>
+         <property name="getProgress" expression="json-eval($.getProgress)"/>
+         <teamwork.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <clientId>{$ctx:clientId}</clientId>
+         </teamwork.init>
+         <teamwork.getAllMilestones>
+            <find>{$ctx:find}</find>
+            <getProgress>{$ctx:getProgress}</getProgress>
+         </teamwork.getAllMilestones>
+         <respond/>
+      </inSequence>
+      <outSequence/>
+      <faultSequence/>
+   </target>
+</proxy>

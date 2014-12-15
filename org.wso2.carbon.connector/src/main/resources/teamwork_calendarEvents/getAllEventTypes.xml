@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://ws.apache.org/ns/synapse" name="getAllEventTypes">
+    <sequence>
+        <call>
+            <endpoint>
+                <http method="GET"
+                      uri-template="{uri.var.teamwork.apiUrl}/calendareventtypes.json"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove" />
+        <header name="ETag" scope="transport" action="remove" />
+        <header name="P3P" scope="transport" action="remove" />
+        <header name="X-RateLimit-Remaining" scope="transport" action="remove" />
+        <header name="X-lastUpdated" scope="transport" action="remove" />
+        <header name="twserver" scope="transport" action="remove" />
+        <header name="X-RateLimit-Limit" scope="transport" action="remove" />
+    </sequence>
+</template>

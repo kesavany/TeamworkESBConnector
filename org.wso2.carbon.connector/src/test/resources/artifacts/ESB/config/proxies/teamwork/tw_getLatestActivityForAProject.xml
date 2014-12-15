@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="tw_getLatestActivityForAProject"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="clientId" expression="json-eval($.clientId)"/>
+         <property name="projectId" expression="json-eval($.projectId)"/>
+         <property name="maxItems" expression="json-eval($.maxItems)"/>
+         <teamwork.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <clientId>{$ctx:clientId}</clientId>
+         </teamwork.init>
+         <teamwork.getLatestActivityForAProject>
+            <projectId>{$ctx:projectId}</projectId>
+            <maxItems>{$ctx:maxItems}</maxItems>
+         </teamwork.getLatestActivityForAProject>
+         <respond/>
+      </inSequence>
+      <outSequence/>
+      <faultSequence/>
+   </target>
+</proxy>

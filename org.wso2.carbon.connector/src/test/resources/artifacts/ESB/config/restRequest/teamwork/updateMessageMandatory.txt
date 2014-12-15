@@ -1,0 +1,12 @@
+  {
+      "apiUrl":"%s",
+      "clientId":"%s",
+      "messageId": "%s",
+      "title": "%s",
+      "categoryId": "%s",
+      "notify": "%s",
+      "private": "%s",
+      "messageBody": "%s",
+      "attachments": "%s",
+      "pendingFileAttachments": "%s"
+  }

@@ -1,0 +1,6 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"page":"%s",
+"pageSize":"%s"
+}

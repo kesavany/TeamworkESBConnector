@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="tw_getProject"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="clientId" expression="json-eval($.clientId)"/>
+         <property name="projectId" expression="json-eval($.projectId)"/>
+         <property name="includePeople" expression="json-eval($.includePeople)"/>
+         <teamwork.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <clientId>{$ctx:clientId}</clientId>
+         </teamwork.init>
+         <teamwork.getProject>
+            <projectId>{$ctx:projectId}</projectId>
+            <includePeople>{$ctx:includePeople}</includePeople>
+         </teamwork.getProject>
+         <respond/>
+      </inSequence>
+      <outSequence/>
+      <faultSequence/>
+   </target>
+</proxy>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="tw_createMilestone"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+   <description/>
+   <target>
+      <inSequence>
+         <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+         <property name="clientId" expression="json-eval($.clientId)"/>
+         <property name="projectId" expression="json-eval($.projectId)"/>
+         <property name="title" expression="json-eval($.title)"/>
+         <property name="description" expression="json-eval($.description)"/>
+         <property name="deadline" expression="json-eval($.deadline)"/>
+         <property name="notify" expression="json-eval($.notify)"/>
+         <property name="reminder" expression="json-eval($.reminder)"/>
+         <property name="responsiblePartyIds"
+                   expression="json-eval($.responsiblePartyIds)"/>
+         <teamwork.init>
+            <apiUrl>{$ctx:apiUrl}</apiUrl>
+            <clientId>{$ctx:clientId}</clientId>
+         </teamwork.init>
+         <teamwork.createMilestone>
+            <projectId>{$ctx:projectId}</projectId>
+            <title>{$ctx:title}</title>
+            <description>{$ctx:description}</description>
+            <deadline>{$ctx:deadline}</deadline>
+            <notify>{$ctx:notify}</notify>
+            <reminder>{$ctx:reminder}</reminder>
+            <responsiblePartyIds>{$ctx:responsiblePartyIds}</responsiblePartyIds>
+         </teamwork.createMilestone>
+         <respond/>
+      </inSequence>
+      <outSequence/>
+      <faultSequence/>
+   </target>
+</proxy>

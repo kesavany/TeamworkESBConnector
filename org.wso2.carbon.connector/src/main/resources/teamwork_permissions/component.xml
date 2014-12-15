@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_permissions" type="synapse/template">
+    <subComponents>
+        <component name="getUserPermissionsOnProject">
+            <file>getUserPermissionsOnProject.xml</file>
+            <description>Gets the details and permissions for a given user on a given project.</description>
+        </component>
+        <component name="addUserToProject">
+            <file>addUserToProject.xml</file>
+            <description>Add a user to a project.</description>
+        </component>
+        <component name="updateUserPermissionOnProject">
+            <file>updateUserPermissionOnProject.xml</file>
+            <description>Sets the permissions of a given user on a given project.</description>
+        </component>
+        <component name="removeUserFromProject">
+            <file>removeUserFromProject.xml</file>
+            <description>Removes a user from a project.</description>
+        </component>
+    </subComponents>
+</component>

@@ -1,0 +1,9 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"startDate":"%s",
+"endDate":"%s",
+"showDeleted":"%s",
+"updatedAfterDate":"%s",
+"page":"%s"
+}

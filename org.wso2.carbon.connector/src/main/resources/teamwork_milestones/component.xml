@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_milestones" type="synapse/template">
+    <subComponents>
+        <component name="createMilestone">
+            <file>createMilestone.xml</file>
+            <description>Create a milestone.</description>
+        </component>
+        <component name="deleteMilestone">
+            <file>deleteMilestone.xml</file>
+            <description>Delete a milestone.</description>
+        </component>
+        <component name="getMilestone">
+            <file>getMilestone.xml</file>
+            <description>Returns a milestone.</description>
+        </component>
+        <component name="getAllMilestones">
+            <file>getAllMilestones.xml</file>
+            <description>Returns all the milestones.</description>
+        </component>
+        <component name="getMilestonesOnAProject">
+            <file>getMilestonesOnAProject.xml</file>
+            <description>Returns the milestones for a project.</description>
+        </component>
+        <component name="completeAMilestone">
+            <file>completeAMilestone.xml</file>
+            <description>Marks the specified milestone as complete.</description>
+        </component>
+        <component name="uncompleteAMilestone">
+            <file>uncompleteAMilestone.xml</file>
+            <description>Marks the specified milestone as uncomplete.</description>
+        </component>
+    </subComponents>
+</component>

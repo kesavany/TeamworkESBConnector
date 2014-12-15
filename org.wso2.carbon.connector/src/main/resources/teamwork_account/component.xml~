@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="teamwork_account" type="synapse/template">
+    <subComponents>
+        <component name="getAccountDetails">
+            <file>getAccountDetails.xml</file>
+            <description>Returns account details</description>
+        </component>
+	<component name="getAuthenticateDetails">
+            <file>getAuthenticateDetails.xml</file>
+            <description>Returns authenticate details</description>
+        </component>
+    </subComponents>
+</component>

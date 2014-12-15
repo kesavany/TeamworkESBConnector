@@ -1,0 +1,13 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"status":"%s",
+"updatedAfterDate":"%s",
+"updatedAfterTime":"%s",
+"orderBy":"%s",
+"createdAfterDate":"%s",
+"createdAfterTime":"%s",
+"includePeople":"%s",
+"page":"%s"
+}
+

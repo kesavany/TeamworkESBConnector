@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="init" xmlns="http://ws.apache.org/ns/synapse">
+    <parameter description="The URL of the teamwork API" name="apiUrl"/>
+    <parameter name="clientId" description="The clientId of the user."/>
+    <sequence>
+        <property name="teamwork.clientId" expression="$func:clientId"/>
+        <property name="uri.var.teamwork.apiUrl" expression="$func:apiUrl" scope="default" type="STRING"/>
+        <header name="Authorization" expression="fn:concat('Basic ',base64Encode(get-property('teamwork.clientId')))"
+                scope="transport"/>
+    </sequence>
+</template>

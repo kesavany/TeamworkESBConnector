@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://ws.apache.org/ns/synapse" name="createMilestone">
+    <parameter name="projectId" description="The project id of the milestone"/>
+    <parameter name="title" description="The title of the milestone"/>
+    <parameter name="description" description="The description of the milestone"/>
+    <parameter name="deadline" description="The deadline of the milestone"/>
+    <parameter name="notify" description="notify/not"/>
+    <parameter name="reminder" description="remind/not"/>
+    <parameter name="responsiblePartyIds" description="The id's of users the milestone is assigned to"/>
+    <sequence>
+        <property name="uri.var.projectId" expression="$func:projectId"/>
+        <property name="uri.var.title" expression="$func:title"/>
+        <property name="uri.var.description" expression="$func:description"/>
+        <property name="uri.var.deadline" expression="$func:deadline"/>
+        <property name="uri.var.notify" expression="$func:notify"/>
+        <property name="uri.var.reminder" expression="$func:reminder"/>
+        <property name="uri.var.responsiblePartyIds" expression="$func:responsiblePartyIds"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                "milestone": {
+                    "title": "$1",
+                    "description": "$2",
+                    "deadline": "$3",
+                    "notify": "$4",
+                    "reminder": "$5",
+                    "responsible-party-ids": "$6"
+                }
+                }
+            </format>
+            <args>
+                <arg evaluator="xml" expression="$func:title"/>
+                <arg evaluator="xml" expression="$func:description"/>
+                <arg evaluator="xml" expression="$func:deadline"/>
+                <arg evaluator="xml" expression="$func:notify"/>
+                <arg evaluator="xml" expression="$func:reminder"/>
+                <arg evaluator="xml" expression="$func:responsiblePartyIds"/>
+            </args>
+        </payloadFactory>
+        <property name="POST_TO_URI" value="true" scope="axis2" type="STRING"></property>
+        <property name="FORCE_HTTP_1.0" value="true" scope="axis2"></property>
+        <property name="DISABLE_CHUNKING" value="true" scope="axis2"></property>
+        <call>
+            <endpoint>
+                <http method="POST"
+                      uri-template="{uri.var.teamwork.apiUrl}/projects/{uri.var.projectId}/milestones.json"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove" />
+        <header name="ETag" scope="transport" action="remove" />
+        <header name="P3P" scope="transport" action="remove" />
+        <header name="X-RateLimit-Remaining" scope="transport" action="remove" />
+        <header name="X-lastUpdated" scope="transport" action="remove" />
+        <header name="twserver" scope="transport" action="remove" />
+        <header name="X-RateLimit-Limit" scope="transport" action="remove" />
+    </sequence>
+</template>
+
+
+
+
+

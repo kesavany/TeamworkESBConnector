@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="tw_addFileToProject"
+       transports="https http"
+       startOnLoad="true"
+       trace="disable">
+    <description/>
+    <target>
+        <inSequence>
+            <property name="apiUrl" expression="json-eval($.apiUrl)"/>
+            <property name="clientId" expression="json-eval($.clientId)"/>
+            <property name="projectId" expression="json-eval($.projectId)"/>
+            <property name="name" expression="json-eval($.name)"/>
+            <property name="description" expression="json-eval($.description)"/>
+            <property name="private" expression="json-eval($.private)"/>
+            <property name="categoryId" expression="json-eval($.categoryId)"/>
+            <property name="categoryName" expression="json-eval($.categoryName)"/>
+            <property name="pendingFileRef" expression="json-eval($.pendingFileRef)"/>
+            <teamwork.init>
+                <apiUrl>{$ctx:apiUrl}</apiUrl>
+                <clientId>{$ctx:clientId}</clientId>
+            </teamwork.init>
+            <teamwork.addFileToProject>
+                <projectId>{$ctx:projectId}</projectId>
+                <name>{$ctx:name}</name>
+                <description>{$ctx:description}</description>
+                <private>{$ctx:private}</private>
+                <categoryId>{$ctx:categoryId}</categoryId>
+                <categoryName>{$ctx:categoryName}</categoryName>
+                <pendingFileRef>{$ctx:pendingFileRef}</pendingFileRef>
+            </teamwork.addFileToProject>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </target>
+</proxy>
+

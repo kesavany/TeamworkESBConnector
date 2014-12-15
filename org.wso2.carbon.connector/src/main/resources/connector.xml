@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connector>
+    <component name="teamwork" package="org.wso2.carbon.connector">
+        <dependency component="teamwork_config"/>
+        <dependency component="teamwork_account"/>
+        <dependency component="teamwork_activity"/>
+        <dependency component="teamwork_companies"/>
+        <dependency component="teamwork_files"/>
+        <dependency component="teamwork_people"/>
+        <dependency component="teamwork_permissions"/>
+        <dependency component="teamwork_projects"/>
+        <dependency component="teamwork_projectRoles"/>
+        <dependency component="teamwork_messages"/>
+        <dependency component="teamwork_calendarEvents"/>
+        <dependency component="teamwork_milestones"/>
+        <dependency component="teamwork_filesUpload"/>
+        <description>wso2 sample connector library</description>
+    </component>
+</connector>

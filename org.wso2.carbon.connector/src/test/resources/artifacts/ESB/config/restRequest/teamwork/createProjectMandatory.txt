@@ -1,0 +1,11 @@
+{
+  "apiUrl":"%s",
+  "clientId":"%s",
+  "name": "%s",
+  "description": "%s",
+  "startDate": "%s",
+  "endDate": "%s",
+  "companyId": "%s",
+  "newCompany": "%s",
+  "categoryId": "%s"
+}

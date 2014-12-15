@@ -1,0 +1,7 @@
+{
+"apiUrl":"%s",
+"clientId":"%s",
+"fileId":"%s",
+"pendingFileRef":"%s",
+"description":"%s"
+}
