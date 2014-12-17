@@ -221,15 +221,12 @@ public class TeamworkConnectorIntegrationTest extends ESBIntegrationTest {
     /*
     @Test(groups = { "wso2.esb" }, description = "teamwork {deleteActivity} integration test with mandatory parameter.")
     public void testDeleteActivity() throws Exception {
-
-        // Invoking the testGetCode method to derive the code which will be used to get access token
         String jsonRequestFilePath = pathToRequestsDirectory + "deleteActivity.txt";
         String methodName = "tw_deleteActivity";
         final String jsonString = ConnectorIntegrationUtil.getFileContent(jsonRequestFilePath);
         final String proxyFilePath = "file:///" + pathToProxiesDirectory + methodName + ".xml";
-        String modifiedJsonString = String.format(jsonString,teamworkConnectorProperties.getProperty("apiUrl"),teamworkConnectorProperties.getProperty("clientId"),teamworkConnectorProperties.getProperty("activityId"));
+        String modifiedJsonString = String.format(jsonString,teamworkConnectorProperties.getProperty("apiUrl"),teamworkConnectorProperties.getProperty("clientId"),teamworkConnectorProperties.getProperty("deleteActivityId"));
         proxyAdmin.addProxyService(new DataHandler(new URL(proxyFilePath)));
-
         try {
             JSONObject jsonObject = ConnectorIntegrationUtil.sendRequest(getProxyServiceURL(methodName), modifiedJsonString);
             Assert.assertEquals(jsonObject.getString("STATUS"),"OK");
