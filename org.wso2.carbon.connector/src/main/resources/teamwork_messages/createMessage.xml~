@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://ws.apache.org/ns/synapse" name="createMessage">
+    <parameter name="projectId" description="The id of the project"/>
+    <parameter name="title" description="The title of the message"/>
+    <parameter name="categoryId" description="The category id of the message"/>
+    <parameter name="notify" description="The people who get notified by the message"/>
+    <parameter name="private" description="The status of the message"/>
+    <parameter name="messageBody" description="The body of the message"/>
+    <parameter name="attachments" description="The attachments of the message"/>
+    <parameter name="pendingFileAttachments" description="The pending file attachments of the message"/>
+    <sequence>
+        <property name="uri.var.projectId" expression="$func:projectId"/>
+        <property name="uri.var.title" expression="$func:title"/>
+        <property name="uri.var.categoryId" expression="$func:categoryId"/>
+        <property name="uri.var.notify" expression="$func:notify"/>
+        <property name="uri.var.private" expression="$func:private"/>
+        <property name="uri.var.messageBody" expression="$func:messageBody"/>
+        <property name="uri.var.attachments" expression="$func:attachments"/>
+        <property name="uri.var.pendingFileAttachments" expression="$func:pendingFileAttachments"/>
+        <payloadFactory media-type="json">
+            <format>
+                {
+                "post": {
+                            "title": "$1",
+                            "category-id": "$2",
+                            "notify": ["$3"],
+                            "private": "$4",
+                            "body": "$5",
+                            "attachments": "$6",
+                            "pendingFileAttachments": "$7"
+                            }
+                }
+            </format>
+            <args>
+                <arg evaluator="xml" expression="$func:title"/>
+                <arg evaluator="xml" expression="$func:categoryId"/>
+                <arg evaluator="xml" expression="$func:notify"/>
+                <arg evaluator="xml" expression="$func:private"/>
+                <arg evaluator="xml" expression="$func:messageBody"/>
+                <arg evaluator="xml" expression="$func:attachments"/>
+                <arg evaluator="xml" expression="$func:pendingFileAttachments"/>
+            </args>
+        </payloadFactory>
+        <property name="POST_TO_URI" value="true" scope="axis2" type="STRING"></property>
+        <property name="FORCE_HTTP_1.0" value="true" scope="axis2"></property>
+        <property name="DISABLE_CHUNKING" value="true" scope="axis2"></property>
+        <call>
+            <endpoint>
+                <http method="POST"
+                      uri-template="{uri.var.teamwork.apiUrl}/projects/{uri.var.projectId}/posts.json"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove" />
+        <header name="ETag" scope="transport" action="remove" />
+        <header name="P3P" scope="transport" action="remove" />
+        <header name="X-RateLimit-Remaining" scope="transport" action="remove" />
+        <header name="X-lastUpdated" scope="transport" action="remove" />
+        <header name="twserver" scope="transport" action="remove" />
+        <header name="X-RateLimit-Limit" scope="transport" action="remove" />
+    </sequence>
+</template>
+
+
+
+
+

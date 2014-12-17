@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns="http://ws.apache.org/ns/synapse" name="getLatestActivityForAProject">
+    <parameter name="projectId" description="The id of the project"/>
+    <parameter name="maxItems" description="The number of the items to be returned"/>
+    <sequence>
+        <property name="uri.var.projectId" expression="$func:projectId"/>
+        <property name="uri.var.maxItems" expression="$func:maxItems"/>
+        <property name="uri.var.optionalParameters" value=""/>
+        <filter
+                xpath="get-property('uri.var.maxItems') = '' or  not(string(get-property('uri.var.maxItems')))">
+            <then>
+                <property name="uri.var.maxItems" value=""/>
+            </then>
+            <else>
+                <property name="uri.var.optionalParameters" expression="fn:concat(get-property('uri.var.optionalParameters'),
+                '?maxItems=', get-property('uri.var.maxItems'))"/>
+            </else>
+        </filter>
+        <call>
+            <endpoint>
+                <http method="GET"
+                      uri-template="{uri.var.teamwork.apiUrl}/projects/{uri.var.projectId}/latestActivity.json{uri.var.optionalParameters}"/>
+            </endpoint>
+        </call>
+        <!-- Remove response custom header information -->
+        <header name="Access-Control-Allow-Headers" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Methods" scope="transport" action="remove" />
+        <header name="Access-Control-Allow-Origin" scope="transport" action="remove" />
+        <header name="ETag" scope="transport" action="remove" />
+        <header name="P3P" scope="transport" action="remove" />
+        <header name="X-RateLimit-Remaining" scope="transport" action="remove" />
+        <header name="X-lastUpdated" scope="transport" action="remove" />
+        <header name="twserver" scope="transport" action="remove" />
+        <header name="X-RateLimit-Limit" scope="transport" action="remove" />
+    </sequence>
+</template>
+
+
+
+
+
