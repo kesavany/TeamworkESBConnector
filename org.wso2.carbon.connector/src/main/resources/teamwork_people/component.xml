@@ -37,6 +37,5 @@
             <file>deleteUser.xml</file>
             <description>Deletes the given user account.</description>
         </component>
-
     </subComponents>
 </component>

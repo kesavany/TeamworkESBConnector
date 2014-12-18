@@ -89,8 +89,3 @@
         <header name="X-RateLimit-Limit" scope="transport" action="remove" />
     </sequence>
 </template>
-
-
-
-
-

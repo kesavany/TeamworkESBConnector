@@ -37,5 +37,4 @@
         <header name="twserver" scope="transport" action="remove" />
         <header name="X-RateLimit-Limit" scope="transport" action="remove" />
     </sequence>
-
 </template>

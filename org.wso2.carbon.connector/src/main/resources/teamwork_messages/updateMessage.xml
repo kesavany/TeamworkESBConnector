@@ -55,7 +55,7 @@
                 <arg evaluator="xml" expression="$func:private"/>
                 <arg evaluator="xml" expression="$func:messageBody"/>
                 <arg evaluator="xml" expression="$func:attachments"/>
-                <arg evaluator="xml" expression="$func:pendingFileAttachments"/>/>
+                <arg evaluator="xml" expression="$func:pendingFileAttachments"/>
             </args>
         </payloadFactory>
         <property name="POST_TO_URI" value="true" scope="axis2" type="STRING"></property>
@@ -79,8 +79,3 @@
         <header name="X-RateLimit-Limit" scope="transport" action="remove" />
     </sequence>
 </template>
-
-
-
-
-
