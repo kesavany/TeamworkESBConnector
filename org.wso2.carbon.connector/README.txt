@@ -16,7 +16,7 @@ STEPS:
 
 2. Add following code block, just after the listeners block (Remove or comment all the other test blocks) in following file - "src/test/resources/testng.xml"
 
-	<test name="Teamwork-Connector-Test" preserve-order="true" verbose="2">
+    <test name="Teamwork-Connector-Test" preserve-order="true" verbose="2">
         <packages>
             <package name="org.wso2.carbon.connector.integration.test.teamwork"/>
         </packages>
@@ -37,11 +37,25 @@ STEPS:
 		
 6. Following data set can be used for the first testsuite run.
 
-		proxyDirectoryRelativePath=/../src/test/resources/artifacts/ESB/config/proxies/teamwork/
-		requestDirectoryRelativePath=/../src/test/resources/artifacts/ESB/config/restRequests/teamwork/
-		propertiesFilePath=/../src/test/resources/artifacts/ESB/connector/config/
-		apiUrl=https://kesan.teamwork.com
- 		clientId=cod323ipad
+	proxyDirectoryRelativePath=/../src/test/resources/artifacts/ESB/config/proxies/teamwork/
+	requestDirectoryRelativePath=/../src/test/resources/artifacts/ESB/config/restRequests/teamwork/
+	propertiesFilePath=/../src/test/resources/artifacts/ESB/connector/config/
+	apiUrl=https://kesan.teamwork.com
+ 	clientId=cod323ipad
+ 	
+ 	Required to change on every test run :
+ 	deleteActivityId
+	companyName
+	deleteCompanyId
+	deleteFileId
+	addFilePendingFileRef
+	newVersionPendingFileRef
+	deleteActivityId
+	deletePersonId
+	createProjectName
+	deleteProjectId
+	deleteEventId
+	deleteMilestoneId
 
 7. Navigate to "org.wso2.carbon.connector/" and run the following command.
      $ mvn clean install
